@@ -1,0 +1,18 @@
+if [ "$USER" == "liammalone" ]
+then
+        brew upgrade; upgrades; clear; Name="Liam";
+        echo ""; echo "";
+        echo "Hello $Name";
+        echo "You are in $(pwd)";
+        echo ""; echo ""; sleep 3; clear
+else
+        echo "Hello, who are you?";
+        read Name;
+        echo "Hello $Name";
+fi
+
+files=(~/Docs/ASCII_Art/*)
+
+cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}
+
+
