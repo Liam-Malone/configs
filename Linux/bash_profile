@@ -11,6 +11,7 @@ alias newpf='source .bash_profile'
 
 files=(~/.ASCII_Art/*)
 cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}
+neofetch
 
 if xhost >& /dev/null ; 
 then 
