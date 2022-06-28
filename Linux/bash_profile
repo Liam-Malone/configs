@@ -21,5 +21,4 @@ else
 
 fi
 
-xrandr -s 1440x900
-
+feh --bg-fill <path/to/image>
