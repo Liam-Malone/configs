@@ -18,3 +18,4 @@ pcmanfm
 picom
 feh
 xterm
+rust
