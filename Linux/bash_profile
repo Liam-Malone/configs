@@ -2,8 +2,9 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+#[[ -f ~/.bashrc ]] && . ~/.bashrc
 
+alias ls='ls --color=auto'
 alias ll='ls -lG'
 alias py='python'
 alias ping='ping -c 5'
@@ -20,5 +21,3 @@ else
 	echo "Display invalid" ; startx  
 
 fi
-
-feh --bg-fill <path/to/image>
