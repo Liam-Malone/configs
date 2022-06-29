@@ -9,6 +9,7 @@ alias ll='ls -lG'
 alias py='python'
 alias ping='ping -c 5'
 alias newpf='source .bash_profile'
+alias fehset='feh --bg-fill'
 
 files=(~/.ASCII_Art/*)
 cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}
@@ -16,8 +17,11 @@ neofetch
 
 if xhost >& /dev/null ; 
 then 
-	echo "Display exists"
+	#echo "Display exists"
+	display_exists=true
 else 
 	echo "Display invalid" ; startx  
 
 fi
+systemctl --user stop timeupdate; systemctl --user start timeupdate
+#user daemon seems to be a lil finicky, breaks if not restarted
