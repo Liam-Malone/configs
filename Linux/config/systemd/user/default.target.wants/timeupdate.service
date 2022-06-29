@@ -1,0 +1,8 @@
+[Unit]
+Description= run time and date in status bar
+
+[Service]
+ExecStart=/usr/bin/timeupdate --no-daemon
+
+[Install]
+WantedBy=default.target
