@@ -1,0 +1,12 @@
+firefox
+gzip
+zip
+tar
+unzip
+alacritty
+dmenu
+pcmanfm
+picom
+feh
+xterm
+
