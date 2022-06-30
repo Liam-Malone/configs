@@ -2,9 +2,11 @@
 
 while [ true ]
 do
-	if xhost >& /dev/null
+	[ if xhost >& /dev/null ]
 	then
 		xsetroot -name "$(date)"
 		sleep 0.5
+	else
+		sleep 3
 	fi
 done
