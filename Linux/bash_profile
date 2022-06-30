@@ -3,6 +3,7 @@
 #
 
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
+files=(~/.ASCII_Art/*)
 
 alias ls='ls --color=auto'
 alias ll='ls -lG'
@@ -10,16 +11,16 @@ alias py='python'
 alias ping='ping -c 5'
 alias newpf='source .bash_profile'
 alias fehset='feh --bg-fill'
-
-files=(~/.ASCII_Art/*)
-cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}
+alias art='cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}'
+alias pfetch='~/pfetch/pkg/pfetch/usr/bin/pfetch'
 neofetch
 
 if xhost >& /dev/null ; 
 then 
 	#echo "Display exists"
 	display_exists=true
+	pfetch
 else 
-	echo "Display invalid" ; startx  
+	echo "No Display Yet" ; startx ; art ; neofetch
 
 fi
