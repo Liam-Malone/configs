@@ -23,5 +23,3 @@ else
 	echo "Display invalid" ; startx  
 
 fi
-systemctl --user stop timeupdate; systemctl --user start timeupdate
-#user daemon seems to be a lil finicky, breaks if not restarted
