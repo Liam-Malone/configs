@@ -1,0 +1,55 @@
+
+
+-----------WM OR DE SETUP -------------
+
+#need xorg to begin for either WM or DE
+
+### FOR DWM SEE GUIDE BELOW ###
+
+pacman -S xorg-server xorg-xinit
+pacman -S xf86-video-intel
+
+
+#### XMONAD INSTALL ####
+$ sudo pacman -S \
+> git \
+> xorg-server xorg-apps xorg-xinit xorg-xmessage \
+> libx11 libxft libxinerama libxrandr libxss \
+> pkgconf
+
+$ mkdir -p ~/.config/xmonad && cd ~/.config/xmonad
+create a file xmonad.hs:
+import XMonad
+
+main :: IO ()
+main = xmonad def
+
+-------- 
+
+$ git clone https://github.com/xmonad/xmonad
+$ git clone https://github.com/xmonad/xmonad-contrib
+
+$ sudo pacman -S stack
+
+in ~/.config/xmonad:
+	$ stack init
+
+	$stack install  #Updates and recompiles all
+###### END XMONAD INSTALL ######
+
+
+
+######## MY DWM INSTALL ########
+
+git clone https://github.com/Liam-Malone/dwm/dwm
+cd dwm; make clean install; -- can't be run without fonts installed (can be fixed by installing Firefox)
+
+cd ~
+git clone https://github.com/configs  #contains pkg_installs.txt file 
+	- run 'sudo pacman -S $(awk '${print 1}' pkg_installs.txt)'
+
+mv xinitrc .xinitrc; mv bash_profile .bash_profile;
+cp config/* .config
+
+systemctl --user enable timeupdate
+
