@@ -41,7 +41,7 @@ in ~/.config/xmonad:
 
 ######## MY DWM INSTALL ########
 
-git clone https://github.com/Liam-Malone/dwm/dwm
+git clone https://github.com/Liam-Malone/dwm
 cd dwm; make clean install; -- can't be run without fonts installed (can be fixed by installing Firefox)
 
 cd ~
@@ -50,6 +50,3 @@ git clone https://github.com/configs  #contains pkg_installs.txt file
 
 mv xinitrc .xinitrc; mv bash_profile .bash_profile;
 cp config/* .config
-
-systemctl --user enable timeupdate
-
