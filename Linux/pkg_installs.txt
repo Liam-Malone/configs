@@ -24,3 +24,4 @@ rust
 flameshot
 cmatrix
 obs-studio
+gimp
