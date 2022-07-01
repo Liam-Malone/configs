@@ -7,6 +7,7 @@ libxinerama
 libxrandr
 libxss
 pkgconf
+neofetch
 firefox
 gzip
 zip
