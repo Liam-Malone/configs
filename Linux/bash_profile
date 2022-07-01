@@ -13,7 +13,7 @@ alias newpf='source .bash_profile'
 alias fehset='feh --bg-fill'
 alias art='cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}'
 alias pfetch='~/pfetch/pkg/pfetch/usr/bin/pfetch'
-neofetch
+
 
 if xhost >& /dev/null ; 
 then 
