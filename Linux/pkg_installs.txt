@@ -27,3 +27,4 @@ flameshot
 cmatrix
 obs-studio
 gimp
+alsa-utils
