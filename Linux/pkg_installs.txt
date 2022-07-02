@@ -16,7 +16,7 @@ zip
 tar
 unzip
 alacritty
-dmenu
+ttf-font-awesome
 pcmanfm
 picom
 feh
