@@ -44,6 +44,9 @@ in ~/.config/xmonad:
 git clone https://github.com/Liam-Malone/dwm
 cd dwm; make clean install; -- can't be run without fonts installed (can be fixed by installing Firefox)
 
+git clone https://github.com/Liam-Malone/dmenu
+cd dmenu; make install
+
 cd ~
 git clone https://github.com/configs  #contains pkg_installs.txt file 
 	- run 'sudo pacman -S $(awk '${print 1}' pkg_installs.txt)'
