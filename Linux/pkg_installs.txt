@@ -28,3 +28,5 @@ cmatrix
 obs-studio
 gimp
 alsa-utils
+alsa-lib
+alsa-plugins
