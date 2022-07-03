@@ -48,8 +48,11 @@ git clone https://github.com/Liam-Malone/dmenu
 cd dmenu; make install
 
 cd ~
-git clone https://github.com/configs  #contains pkg_installs.txt file 
+git clone https://github.com/Liam-Malone/configs  #contains pkg_installs.txt file 
 	- run 'sudo pacman -S $(awk '${print 1}' pkg_installs.txt)'
+
+git clone https://github.com/Liam-Malone/slstaus
+cd slstatus; make clean install
 
 mv xinitrc .xinitrc; mv bash_profile .bash_profile;
 cp config/* .config
