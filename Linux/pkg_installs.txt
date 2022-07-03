@@ -32,3 +32,5 @@ alsa-lib
 alsa-plugins
 youtube-dl
 mpv
+pulseaudio
+pamixer
