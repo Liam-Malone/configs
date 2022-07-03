@@ -30,3 +30,5 @@ gimp
 alsa-utils
 alsa-lib
 alsa-plugins
+youtube-dl
+mpv
