@@ -23,4 +23,5 @@ xrandr -s <displaysize> & #set display resolution
 bash ~/.fehbg & #set desktop image 
 alacritty &
 picom -b --experimental-backends &
+slstatus &
 exec dwm
