@@ -1,0 +1,13 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias chtheme='kitty +kitten themes'
+alias ls='ls --color=auto'
+PS1='\e[3;m\e[1;35m[🦩: \W]\$ \e[m\e[m\]'
+
+source ~/.bash_profile
+
