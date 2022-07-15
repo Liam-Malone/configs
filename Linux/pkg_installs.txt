@@ -35,3 +35,10 @@ mpv
 pulseaudio
 pamixer
 noto-fonts-emoji --needed
+torbrowser-launcher
+adobe-source-han-sans-jp-fonts
+adobe-source-han-serif-jp-fonts
+ttf-dejavu
+fcitx-im
+fcitx-configtool
+fcitx-mozc
