@@ -34,3 +34,4 @@ youtube-dl
 mpv
 pulseaudio
 pamixer
+noto-fonts-emoji --needed
