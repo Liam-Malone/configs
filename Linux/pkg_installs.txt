@@ -23,7 +23,8 @@ feh
 xterm
 htop
 rust
-flameshot
+deepin-screenshot
+xclip
 cmatrix
 obs-studio
 gimp
