@@ -49,8 +49,8 @@ cd dmenu; make install
 
 cd ~
 git clone https://github.com/Liam-Malone/configs  #contains pkg_installs.txt file 
-	- run 'sudo pacman -S $(awk '${print 1}' pkg_installs.txt)'
-
+	- run 'sudo pacman -S - < pkg_installs.txt' to install all packages
+	
 git clone https://github.com/Liam-Malone/slstaus
 cd slstatus; make clean install
 
