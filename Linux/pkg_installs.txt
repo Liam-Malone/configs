@@ -43,3 +43,8 @@ ttf-dejavu
 fcitx-im
 fcitx-configtool
 fcitx-mozc
+adapta-gtk-theme
+materia-gtk-theme
+arc-gtk-theme
+xcursor-themes
+lxappearance
