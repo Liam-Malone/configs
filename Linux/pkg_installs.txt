@@ -26,7 +26,6 @@ rust
 deepin-screenshot
 xclip
 cmatrix
-obs-studio
 gimp
 alsa-utils
 alsa-lib
@@ -48,3 +47,6 @@ materia-gtk-theme
 arc-gtk-theme
 xcursor-themes
 lxappearance
+flatpak
+elfutils
+patch
