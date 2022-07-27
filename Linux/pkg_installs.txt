@@ -50,3 +50,4 @@ lxappearance
 flatpak
 elfutils
 patch
+spotifyd

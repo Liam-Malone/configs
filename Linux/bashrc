@@ -45,4 +45,3 @@ else
 	echo "No Display Yet" ; art ; neofetch --ascii_distro gentoo ; startx
 
 fi
-$HOME/scripts/wall
