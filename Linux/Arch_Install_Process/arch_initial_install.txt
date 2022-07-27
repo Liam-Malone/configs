@@ -1,11 +1,23 @@
+ENSURE YOU HAVE THE MOST RECENT ISO BEFORE INSTALLING
+
 lsblk - check what drives are available
 
 ping to check network
 
 cfdisk -> configure partition (128M for boot with grub)
 mkfs.ext4 /dev/sda1; .... sda2
-mount drives: /dev/sda2 /mnt  mkdir /mnt/boot /dev/sda1 /mnt/boot
+
+mount drives:
+
+mount /dev/sda2 -> /mnt  
+mkdir /mnt/boot 
+mount /dev/sda1 -> /mnt/boot
+
+
 pacstrap /mnt base base-devel linux linux-firmware vim
+IF THIS FAILS:
+	Try running 'archinstall' to have it update keyrings then Abort and resume regular install
+
 genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt /bin/bash
