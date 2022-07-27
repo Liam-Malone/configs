@@ -1,0 +1,21 @@
+[2022-07-25T19:16:11.682Z] Log level: Info
+[2022-07-25T19:16:11.687Z] [info] Validating found git in: git
+[2022-07-25T19:16:11.746Z] [info] Using git 2.37.1 from git
+[2022-07-25T19:16:11.775Z] > git rev-parse --show-toplevel [13ms]
+[2022-07-25T19:16:11.830Z] > git rev-parse --git-dir --git-common-dir [35ms]
+[2022-07-25T19:16:11.841Z] [info] Open repository: /home/liam/Documents/code/Rust/Hello_World
+[2022-07-25T19:16:11.889Z] > git status -z -uall [34ms]
+[2022-07-25T19:16:11.902Z] > git symbolic-ref --short HEAD [7ms]
+[2022-07-25T19:16:11.921Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [13ms]
+[2022-07-25T19:16:11.945Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [12ms]
+[2022-07-25T19:16:11.950Z] > git remote --verbose [8ms]
+[2022-07-25T19:16:11.973Z] > git config --get commit.template [13ms]
+[2022-07-25T19:16:11.996Z] > git status -z -uall [2ms]
+[2022-07-25T19:16:12.008Z] > git symbolic-ref --short HEAD [4ms]
+[2022-07-25T19:16:12.026Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+[2022-07-25T19:16:12.038Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [5ms]
+[2022-07-25T19:16:12.040Z] > git remote --verbose [3ms]
+[2022-07-25T19:16:12.071Z] > git config --get commit.template [6ms]
+[2022-07-25T19:16:12.376Z] > git show --textconv :src/main.rs [7ms]
+[2022-07-25T19:16:12.377Z] > git ls-files --stage -- /home/liam/Documents/code/Rust/Hello_World/src/main.rs [2ms]
+[2022-07-25T19:16:12.415Z] > git check-ignore -v -z --stdin [1ms]

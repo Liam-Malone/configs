@@ -1,0 +1,4 @@
+[2022-07-25 13:30:35.748] [main] [info] update#ctor - updates are disabled as there is no update URL
+[2022-07-25 13:30:37.688] [main] [info] Starting extension host with pid 876 (fork() took 12 ms).
+[2022-07-25 13:30:54.963] [main] [info] Waiting for extension host with pid 876 to exit.
+[2022-07-25 13:30:54.969] [main] [info] Extension host with pid 876 exited with code: 0, signal: null.

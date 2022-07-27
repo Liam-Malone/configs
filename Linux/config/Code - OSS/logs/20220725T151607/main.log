@@ -1,0 +1,4 @@
+[2022-07-25 15:16:07.728] [main] [info] update#ctor - updates are disabled as there is no update URL
+[2022-07-25 15:16:10.120] [main] [info] Starting extension host with pid 17233 (fork() took 15 ms).
+[2022-07-25 15:16:13.735] [main] [info] Waiting for extension host with pid 17233 to exit.
+[2022-07-25 15:16:13.778] [main] [info] Extension host with pid 17233 exited with code: 0, signal: null.

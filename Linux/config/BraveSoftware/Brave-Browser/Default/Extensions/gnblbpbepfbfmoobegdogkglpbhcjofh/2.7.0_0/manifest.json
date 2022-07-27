@@ -1,0 +1,86 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "dist/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "16": "images/icons/icon16.png",
+         "24": "images/icons/icon24.png",
+         "32": "images/icons/icon32.png"
+      },
+      "default_popup": "default_popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_character.js" ],
+      "matches": [ "*://*.dndbeyond.com/*characters/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_monster.js" ],
+      "matches": [ "*://*.dndbeyond.com/monsters/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_vehicle.js" ],
+      "matches": [ "*://*.dndbeyond.com/vehicles/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_spell.js" ],
+      "matches": [ "*://*.dndbeyond.com/spells/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_encounter.js" ],
+      "matches": [ "*://*.dndbeyond.com/my-encounters", "*://*.dndbeyond.com/encounters/*", "*://*.dndbeyond.com/combat-tracker/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_item.js" ],
+      "matches": [ "*://*.dndbeyond.com/equipment/*", "*://*.dndbeyond.com/magic-items/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_feat.js" ],
+      "matches": [ "*://*.dndbeyond.com/feats/*" ]
+   }, {
+      "all_frames": true,
+      "css": [ "dist/beyond20.css" ],
+      "exclude_matches": [ "*://*.dndbeyond.com/classes/*/edit" ],
+      "js": [ "libs/jquery-3.4.1.min.js", "dist/dndbeyond_source.js" ],
+      "matches": [ "*://*.dndbeyond.com/sources/*", "*://*.dndbeyond.com/classes/*" ]
+   }, {
+      "css": [ "libs/css/alertify.css", "libs/css/alertify-themes/default.css", "libs/css/alertify-themes/beyond20.css" ],
+      "js": [ "libs/alertify.min.js", "libs/jquery-3.4.1.min.js", "dist/roll20.js" ],
+      "matches": [ "*://app.roll20.net/editor/" ]
+   }, {
+      "css": [ "libs/css/alertify.css", "libs/css/alertify-themes/default.css", "libs/css/alertify-themes/beyond20.css" ],
+      "js": [ "libs/alertify.min.js", "libs/jquery-3.4.1.min.js", "libs/lz-string.min.js", "dist/astral.js" ],
+      "matches": [ "*://*.astraltabletop.com/play/*" ]
+   } ],
+   "description": "Integrates the D&D Beyond Character Sheets with Roll20 and Foundry VTT.",
+   "icons": {
+      "128": "images/icons/icon128.png",
+      "16": "images/icons/icon16.png",
+      "24": "images/icons/icon24.png",
+      "256": "images/icons/icon256.png",
+      "32": "images/icons/icon32.png",
+      "48": "images/icons/icon48.png",
+      "64": "images/icons/icon64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjQxrmFvqZkZ/e2ZoF79XI5SAG9o/ECpzu/ZWUIT8h/Z3N0Y3qqOzXCD5FKsp1bFfTGOdwNpCxP4ZcZXnUkHWY8omCF9R5+eUbd4yWSPAG56ZY/WlCjwQkS/xz81d7+h0Hsth1J98YDbS5W7jO5NnpaweBJs4sCHYPc5g0Jq+EcBCz155rq/OBYl6SjEblVGUCxoa9Yr4Prjal+p9lz0MglC2wT2qRlMiAfNi+BrJLWJx33dMnrRmNlKawAVvs8wDGG6Dr9ENt1Hg1jphIYPExaSJtnw6Mg9ykxPl/vRkkzdyUYfuP1lbuWIb5MuykWMEmCUQe6UjXJ4zBMffl13RjwIDAQAB",
+   "manifest_version": 2,
+   "name": "Beyond 20",
+   "optional_permissions": [ "*://*/" ],
+   "options_ui": {
+      "open_in_tab": false,
+      "page": "options.html"
+   },
+   "permissions": [ "activeTab", "tabs", "storage", "*://beyond20.kicks-ass.org/roll", "*://app.roll20.net/editor/", "*://*.dndbeyond.com/*", "*://*.forge-vtt.com/game", "*://*.astraltabletop.com/play/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.7.0",
+   "web_accessible_resources": [ "images/*", "libs/css/alertify.css", "libs/css/alertify-themes/default.css", "libs/css/alertify-themes/beyond20.css", "libs/alertify.min.js", "libs/jquery-3.4.1.min.js", "libs/lz-string.min.js", "dist/roll20_script.js", "dist/fvtt_script.js", "dist/astral_script.js", "dist/dndbeyond_mb.js", "popup.html", "options.html" ]
+}

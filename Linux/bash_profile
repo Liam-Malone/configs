@@ -1,35 +1,4 @@
 #
 # ~/.bash_profile
 #
-
-#[[ -f ~/.bashrc ]] && . ~/.bashrc
-files=(~/.ASCII_Art/*)
-
-alias ls='ls --color=auto'
-alias ll='ls -lG'
-alias py='python'
-alias ping='ping -c 5'
-alias new='clear; source ~/.bashrc'
-alias fehset='feh --bg-fill'
-alias art='cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}'
-alias pfetch='~/pfetch/pkg/pfetch/usr/bin/pfetch'
-alias nfetch='neofetch --disable gpu memory packages uptime --ascii_distro'
-alias spt='bash ~/scripts/launchspt'
-alias gitpushdwm='bash ~/scripts/dwmgitpush'
-alias open='pcmanfm'
-alias kpx='keepassxc-cli'
-
-export GTK_IM_MODULE='fcitx'
-export QT_IM_MODULE='fcitx'
-export SDL_IM_MODULE='fcitx'
-export XMODIFIERS='@im=fcitx'
-
-if xhost >& /dev/null ; 
-then 
-	#echo "Display exists"
-	display_exists=true
-	pfetch
-else 
-	echo "No Display Yet" ; art ; neofetch --ascii_distro gentoo ; startx
-
-fi
+[[ -f ~/.bashrc ]] && . ~/.bashrc

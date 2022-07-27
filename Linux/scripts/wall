@@ -1,0 +1,2 @@
+walls=($HOME/pictures/wallpapers/*)
+feh --bg-fill ${walls[$[ $RANDOM % ${#walls[@]} + 0 ]]}

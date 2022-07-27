@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ ! $(pgrep "spotifyd") ]; then
+	spotifyd
+fi
+
+~/spotify-tui/pkg/spotify-tui/usr/bin/spt

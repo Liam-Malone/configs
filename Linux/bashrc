@@ -4,10 +4,45 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+files=(~/.ASCII_Art/*)
 
-alias chtheme='kitty +kitten themes'
 alias ls='ls --color=auto'
-PS1='\e[3;m\e[1;35m[🦩: \W]\$ \e[m\e[m\]'
+alias ll='ls -lG'
+alias chtheme='kitty +kitten themes'
+alias py='python'
+alias ping='ping -c 5'
+alias new='clear; source ~/.bash_profile'
+alias fehset='feh --bg-fill'
+alias wall='$HOME/scripts/wall'
+alias art='cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}'
+alias pfetch='~/pfetch/pkg/pfetch/usr/bin/pfetch'
+alias nfetch='clear; neofetch --disable gpu memory packages uptime --ascii_distro'
+alias spt='~/scripts/launchspt'
+alias gitpushdwm='~/scripts/dwmgitpush'
+alias open='pcmanfm'
+alias kpx='keepassxc-cli'
+alias cava='~/cava/pkg/cava/usr/bin/cava'
+alias screenshot='~/scripts/screenshot'
 
-source ~/.bash_profile
 
+if [ "$TERM" == "xterm-kitty" ] || [ "$TERM" == "alacritty" ] || [ "$TERM" == "xterm-256color" ]; then
+	PS1='\e[3;m\e[1;35m[🦩: \W]\$ \e[m\e[m\]'
+fi
+
+set -o vi
+
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
+export RANGER_LOAD_DEFAULT_RC='FALSE'
+if xhost >& /dev/null ; 
+then 
+	#echo "Display exists"
+	display_exists=true
+	pfetch
+else 
+	echo "No Display Yet" ; art ; neofetch --ascii_distro gentoo ; startx
+
+fi
+$HOME/scripts/wall

@@ -1,0 +1,27 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content.js" ],
+      "matches": [ "*://*.twitch.tv/*" ]
+   } ],
+   "description": "7TV is an emote service and extension for Twitch and YouTube",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzHGW8gTP2TyFGD6ImcN7aNhq41qBXlM5wz/WyyFhWT3IZXHgf6sgKbRN0qkEyipAPIJrWcB3ZCoiENREY86X1XtmFSBTKn9/wsC0LGvg1rn7boFPagEX4VgWBFlNOEldEOGsU+0kJU6pUQiH+9IxRI99bjWs39ErI5B8LWKgTfzyBgRBw6Kj2WX5ntr8hdeV7tblfBRbON/Gs2nmPCGBCYnbOrdQPJigVDrLFD6EbrzaIDXgnzhZ4FW2+pmb3OIUMSlA3ruO3d3PKFyk3p9qIX+ORwEpfFT5eYJ8MRqz5iKqaAmsDyPukIICkB6ClcOp6Uo7luFViLgY/FQs9cqu0QIDAQAB",
+   "manifest_version": 2,
+   "name": "7TV",
+   "optional_permissions": [ "*://*.youtube.com/*" ],
+   "page_action": {
+      "default_icon": "icon128.png"
+   },
+   "permissions": [ "*://*.twitch.tv/*", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.2.2",
+   "web_accessible_resources": [ "twitch.js", "youtube.js", "ffz_hook.js", "ffz_addon.js", "styles/Style.css", "image/*.webp" ]
+}
