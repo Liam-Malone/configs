@@ -13,7 +13,6 @@ alias py='python'
 alias ping='ping -c 5'
 alias new='clear; source ~/.bashrc'
 alias fehset='feh --bg-fill'
-alias art='cat ${files[$[ $RANDOM % ${#files[@]} + 0 ]]}'
 alias nfetch='clear; neofetch --disable gpu memory packages uptime --ascii_distro'
 alias open='pcmanfm'
 alias kpx='keepassxc-cli'
@@ -36,6 +35,6 @@ then
 	display_exists=true
 	pfetch
 else 
-	echo "No Display Yet" ; art ; neofetch ; startx
+	echo "No Display Yet" ; neofetch ; startx
 
 fi
