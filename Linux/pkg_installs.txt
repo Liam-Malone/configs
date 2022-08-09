@@ -52,3 +52,4 @@ flatpak
 elfutils
 patch
 spotifyd
+keepassxc
