@@ -45,6 +45,7 @@ fcitx-mozc
 adapta-gtk-theme
 materia-gtk-theme
 arc-gtk-theme
+arc-icon-theme
 xcursor-themes
 lxappearance
 flatpak
