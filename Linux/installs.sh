@@ -6,6 +6,11 @@ echo "running from $fromdir"
 cd $HOME
 echo "[%] Upgrading system..."; sleep 1
 sudo pacman -Syu
+
+cd $fromdir
+echo "[%] installing packages from given list..."; sleep 1
+sudo pacman -S --needed - < pkg_installs.txt; 
+
 echo "[%] grabbing dwm..."
 git clone https://github.com/Liam-Malone/dwm
 echo "[%] building dwm..."; cd $HOME/dwm; sudo make clean install; cd $HOME
@@ -24,8 +29,6 @@ echo "[%] building paru..."; cd $HOME/paru; makepkg
 sudo cp pkg/paru/usr/bin/paru /usr/bin/
 
 cd $fromdir
-echo "[%] installing packages from list..."; sleep 1
-sudo pacman -S --needed - < pkg_installs.txt; 
 echo "[%] installing flatpaks..."; sleep 1
 flatpak install com.obsproject.Studio org.kde.kdenlive
 echo "[%] moving onto configs..."; sleep 1
