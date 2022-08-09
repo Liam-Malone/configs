@@ -11,6 +11,7 @@ cd $fromdir
 echo "[%] installing packages from given list..."; sleep 1
 sudo pacman -S --needed - < pkg_installs.txt; 
 
+cd $HOME
 echo "[%] grabbing dwm..."
 git clone https://github.com/Liam-Malone/dwm
 echo "[%] building dwm..."; cd $HOME/dwm; sudo make clean install; cd $HOME
