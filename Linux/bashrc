@@ -30,12 +30,12 @@ export QT_IM_MODULE='fcitx'
 export SDL_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 export RANGER_LOAD_DEFAULT_RC='FALSE'
-if xhost >& /dev/null ; 
+if [ xhost >& /dev/null ] ; 
 then 
 	#echo "Display exists"
 	display_exists=true
 	pfetch
 else 
-	echo "No Display Yet" ; art ; neofetch --ascii_distro gentoo ; startx
+	echo "No Display Yet" ; art ; neofetch ; startx
 
 fi
