@@ -50,6 +50,7 @@ xcursor-themes
 lxappearance
 flatpak
 elfutils
+kitty
 patch
 spotifyd
 keepassxc
