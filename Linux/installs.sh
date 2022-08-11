@@ -17,12 +17,12 @@ git clone https://github.com/Liam-Malone/dwm
 echo "[%] building dwm..."; cd $HOME/dwm; sudo make clean install; cd $HOME
 
 echo "[%] grabbing dmenu..."
-git clone https://github.com/Liam-Malone/dmenu; cd $HOME
-echo "[%] building dmenu..."; cd $HOME/dmenu; sudo make clean install
+git clone https://github.com/Liam-Malone/dmenu
+echo "[%] building dmenu..."; cd $HOME/dmenu; sudo make clean install; cd $HOME
 
 echo "[%] grabbing slstatus..."
-git clone https://github.com/Liam-Malone/slstatus; cd $HOME
-echo "[%] building slstatus..."; cd $HOME/slstatus; sudo make clean install
+git clone https://github.com/Liam-Malone/slstatus
+echo "[%] building slstatus..."; cd $HOME/slstatus; sudo make clean install; cd $HOME
 
 echo "[%] grabbing paru (aur helper)..."
 cd $HOME; git clone https://aur.archlinux.org/paru
