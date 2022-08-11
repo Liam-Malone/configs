@@ -23,7 +23,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt /bin/bash
 pwd; ls.....
 
-pacman -S networkmanager grub
+pacman -S networkmanager grub git
 systemctl enable NetworkManager
 
 grub-install /dev/sda
@@ -47,4 +47,8 @@ reboot
 useradd -mg wheel <username>; passwd <username>
 vim /etc/sudoers --> Uncomment wheel user line; add in: Defaults !tty_tickets
 
-begin WM setup
+#### MY CONTINUATION #####
+git clone https://Liam-Malone/configs
+cd configs
+./installs.sh
+startx
