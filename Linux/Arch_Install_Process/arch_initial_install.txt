@@ -51,4 +51,3 @@ vim /etc/sudoers --> Uncomment wheel user line; add in: Defaults !tty_tickets
 git clone https://Liam-Malone/configs
 cd configs
 ./installs.sh
-startx
