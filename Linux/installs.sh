@@ -34,22 +34,21 @@ cd $fromdir
 echo "[%] installing flatpaks..."; sleep 1
 flatpak install com.obsproject.Studio org.kde.kdenlive
 echo "[%] moving onto configs..."; sleep 1
-cp bashrc /home/$USER/.bashrc
-cp -R scripts /home/$USER/
+cp bashrc $HOME/.bashrc
+cp -R scripts $HOME/
 echo "export PATH=\"$HOME/scripts:$PATH\"" >> $HOME/.bashrc
-cp bash_profile /home/$USER/.bash_profile
-cp -R config/* /home/$USER/.config/
-cp xinitrc /home/$USER/.xinitrc
+cp bash_profile $HOME/.bash_profile
+cp -R config/* $HOME/.config/
+cp xinitrc $HOME/.xinitrc
 cd $HOME
 echo "[%] installing aur packages..."
 sleep 1
 paru -S brave-bin pfetch spotify-tui nitch cava
 echo ""; echo ""
+echo ""; echo "[%] grabbing wallpapers..."; cd $HOME/pictures
+git clone https://gitlab.com/dwt1/wallpapers; cd $HOME
 echo "[%] Assuming no failures; install is complete :)"
 sleep 1
 echo "Enjoy your new system :)"
-sleep 2
-cd $HOME
-git clone https://gitlab.com/dwt1/wallpapers
 sleep 1
 startx
