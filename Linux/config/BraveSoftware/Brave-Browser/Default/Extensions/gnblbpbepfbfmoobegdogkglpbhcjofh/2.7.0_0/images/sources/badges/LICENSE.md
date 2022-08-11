@@ -1,1 +1,0 @@
-These icons were designed and created by [Jerry Escandon](https://github.com/Jerryescandon) and are released under a [CC-BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
