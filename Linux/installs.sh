@@ -48,4 +48,8 @@ echo ""; echo ""
 echo "[%] Assuming no failures; install is complete :)"
 sleep 1
 echo "Enjoy your new system :)"
+sleep 2
+cd $HOME
+git clone https://gitlab.com/dwt1/wallpapers
 sleep 1
+startx
