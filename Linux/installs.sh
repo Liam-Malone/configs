@@ -38,7 +38,7 @@ cp bashrc $HOME/.bashrc
 cp -R scripts $HOME/
 echo "export PATH=\"$HOME/scripts:$PATH\"" >> $HOME/.bashrc
 cp bash_profile $HOME/.bash_profile
-cp -R config/* $HOME/.config/
+cp -R config $HOME/.config/
 cp xinitrc $HOME/.xinitrc
 cd $HOME
 echo "[%] installing aur packages..."
