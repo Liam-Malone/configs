@@ -22,6 +22,7 @@ if [ "$TERM" == "xterm-kitty" ] || [ "$TERM" == "alacritty" ] || [ "$TERM" == "x
 	PS1='\e[3;m\e[1;35m[🦩: \W]\$ \e[m\e[m\]'
 fi
 
+##### STARTUP HELP MESSAGE ######
 if [ "$TERM" == "alacritty" ]; then
 	cat ~/dwm/config.h | grep XK_
 	echo "       above are the system keybinds - stored in $HOME/dwm/config.h"
@@ -29,6 +30,7 @@ if [ "$TERM" == "alacritty" ]; then
 	echo "       a copy of the keybinds is stored in $HOME/documents/keybinds"
 	echo ""
 fi
+##### END OF STARTUP HELP MESSAGE ##### 
 
 set -o vi
 
