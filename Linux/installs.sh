@@ -16,6 +16,7 @@ cd $HOME
 echo "[%] grabbing dwm..."
 git clone https://github.com/Liam-Malone/dwm
 echo "[%] building dwm..."; cd $HOME/dwm; sudo make clean install; cd $HOME
+echo "$(cat dwm/config.h | XK_)" > $HOME/documents/keybinds
 
 echo "[%] grabbing dmenu..."
 git clone https://github.com/Liam-Malone/dmenu

@@ -3,4 +3,5 @@ cd $HOME/dwm
 echo "rebuilding dwm..."
 sudo make clean install
 echo ""; echo "";
+echo "$(cat dwm/config.h | grep XK_)" > $HOME/documents/keybinds
 echo -e "dwm has been rebuilt, \e[1:35mplease restart to apply changes\e[m"

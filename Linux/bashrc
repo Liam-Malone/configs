@@ -25,7 +25,9 @@ fi
 if [ "$TERM" == "alacritty" ]; then
 	cat ~/dwm/config.h | grep XK_
 	echo "       above are the system keybinds - stored in $HOME/dwm/config.h"
-	echo "       if you change these, run 'dwmrebuild' after"
+	echo "       if you change these, run 'dwmrebuild' after"; echo ""
+	echo "       a copy of the keybinds is stored in $HOME/documents/keybinds"
+	echo ""
 fi
 
 set -o vi
