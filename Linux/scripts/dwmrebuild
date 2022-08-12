@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $HOME/dwm
+echo "rebuilding dwm..."
+sudo make clean install
+echo ""; echo "";
+echo -e "dwm has been rebuilt, \e[1:35mplease restart to apply changes\e[m"

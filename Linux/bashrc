@@ -22,6 +22,12 @@ if [ "$TERM" == "xterm-kitty" ] || [ "$TERM" == "alacritty" ] || [ "$TERM" == "x
 	PS1='\e[3;m\e[1;35m[🦩: \W]\$ \e[m\e[m\]'
 fi
 
+if [ "$TERM" == "alacritty" ]; then
+	cat ~/dwm/config.h | grep XK_
+	echo "       above are the system keybinds - stored in $HOME/dwm/config.h"
+	echo "       if you change these, run 'dwmrebuild' after"
+fi
+
 set -o vi
 
 export GTK_IM_MODULE='fcitx'

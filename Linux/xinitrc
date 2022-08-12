@@ -5,6 +5,6 @@ xrandr -s 1680x1050 & #set display resolution
 picom -b --experimental-backends &
 ~/.fehbg & #set desktop image 
 slstatus &
-kitty &
+alacritty &
 fcitx -d &
 exec dwm
