@@ -4,7 +4,7 @@ echo "If you haven't already, cd to the directory this script is stored in befor
 fromdir=$(pwd)
 echo "running from $fromdir"
 cd $HOME
-mkdir pictures; mkdir documents; mkdir downloads
+mkdir pictures; mkdir pictures/screenshots; mkdir documents; mkdir downloads
 echo "[%] Upgrading system..."; sleep 1
 sudo pacman -Syu
 
