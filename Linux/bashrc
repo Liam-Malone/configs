@@ -24,6 +24,7 @@ fi
 
 ##### STARTUP HELP MESSAGE ######
 if [ "$TERM" == "alacritty" ]; then
+	$HOME/scripts/wallpaper
 	cat ~/dwm/config.h | grep XK ; echo ""
 	echo -e "       above are the system keybinds - stored in \e[1;33m$HOME/dwm/config.h\e[m"
 	echo -e "       if you change these, run \e[1;33mdwmrebuild\e[m after"; echo ""
