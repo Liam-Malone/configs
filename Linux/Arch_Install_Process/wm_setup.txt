@@ -1,10 +1,17 @@
-
-
 -----------WM OR DE SETUP -------------
 
 #need xorg to begin for either WM or DE
 
-### FOR DWM SEE GUIDE BELOW ###
+######## MY DWM INSTALL ########
+
+git clone https://github.com/Liam-Malone/configs
+cd configs/Linux
+check pkg_installs.txt to remove any unwanted packages or add desired packages
+./installs.sh
+you will be prompted to confirm some installs along the way
+####### END OF DWM INSTALL #######
+
+####### OTHERS #######
 
 pacman -S xorg-server xorg-xinit
 pacman -S xf86-video-intel
@@ -36,23 +43,3 @@ in ~/.config/xmonad:
 
 	$stack install  #Updates and recompiles all
 ###### END XMONAD INSTALL ######
-
-
-
-######## MY DWM INSTALL ########
-
-git clone https://github.com/Liam-Malone/dwm
-cd dwm; make clean install; -- can't be run without fonts installed (can be fixed by installing Firefox)
-
-git clone https://github.com/Liam-Malone/dmenu
-cd dmenu; make install
-
-cd ~
-git clone https://github.com/Liam-Malone/configs  #contains pkg_installs.txt file 
-	- run 'sudo pacman -S - < pkg_installs.txt' to install all packages
-	
-git clone https://github.com/Liam-Malone/slstaus
-cd slstatus; make clean install
-
-mv xinitrc .xinitrc; mv bash_profile .bash_profile;
-cp config/* .config
