@@ -48,6 +48,6 @@ useradd -mg wheel <username>; passwd <username>
 vim /etc/sudoers --> Uncomment wheel user line; add in: Defaults !tty_tickets
 
 #### MY CONTINUATION #####
-git clone https://Liam-Malone/configs
+git clone https://github.com/Liam-Malone/configs
 cd configs
 ./installs.sh
