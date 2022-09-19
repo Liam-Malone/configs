@@ -1,3 +1,3 @@
 #!/bin/sh
 
-deepin-screenshot -s ~/pictures/Screenshots/scrot.png; xclip -selection clipboard -t image/png -i ~/pictures/Screenshots/scrot.png ; rm ~/pictures/Screenshots/scrot.png
+deepin-screenshot -s ~/pictures/screenshots/img.png; xclip -selection clipboard -t image/png -i ~/pictures/screenshots/img.png ; rm ~/pictures/screenshots/img.png

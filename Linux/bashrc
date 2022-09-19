@@ -44,7 +44,7 @@ if [ xhost >& /dev/null ] ;
 then 
 	#echo "Display exists"
 	display_exists=true
-	pfetch
+	neofetch
 else 
 	echo "No Display Yet" ; neofetch ; startx
 

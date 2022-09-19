@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xrandr -s 1680x1050 & #set display resolution
+xrandr -s 2560x1440 & #set display resolution
 #program autostarts
 picom -b --experimental-backends &
 ~/.fehbg & #set desktop image 

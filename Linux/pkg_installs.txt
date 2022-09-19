@@ -1,6 +1,8 @@
 xorg-server
 xorg-xinit
 xf86-video-intel
+nvidia
+discord
 libx11
 libxft
 libxinerama
