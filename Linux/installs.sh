@@ -1,14 +1,17 @@
 #!/bin/sh
 clear;echo ""; 
 echo -e "\e[1;35mIf you haven't already, cd to the directory this script is stored in before continuing."; sleep 3; echo "";
-fromdir=$(pwd)
-echo -e "\e[1;34mrunning from $fromdir"
+echo "This script will ensure the core, extra and multilib repos are enabled in your /etc/pacman.conf"; sleep 3; echo ""
+srcdir=$(pwd)
+echo -e "\e[1;34mrunning from $srcdir"
+echo -e "\e[1;34menabling appropriate repos"
+sudo cp $srcdir/pacman.conf /etc/pacman.conf
 cd $HOME
 mkdir pictures; mkdir pictures/screenshots; mkdir documents; mkdir downloads; mkdir videos
 echo -e "\e[1;34m[%] Upgrading system..."; sleep 1
 sudo pacman -Syu
 
-cd $fromdir
+cd $srcdir
 echo -e "\e[1;32m[%] installing packages from given list..."; sleep 1
 sudo pacman -S --needed - < pkglist.txt; 
 
@@ -38,7 +41,7 @@ cd $HOME; git clone https://aur.archlinux.org/paru
 echo -e "\e[1;34m[%] building paru..."; cd $HOME/paru; makepkg
 sudo cp pkg/paru/usr/bin/paru /usr/bin/
 
-cd $fromdir
+cd $srcdir
 
 echo -e "\e[1;34m[%] moving onto configs..."; sleep 1
 cp bashrc $HOME/.bashrc
