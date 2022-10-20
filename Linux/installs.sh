@@ -9,18 +9,18 @@ sudo cp $srcdir/pacman.conf /etc/pacman.conf
 cd $HOME
 mkdir pictures; mkdir pictures/screenshots; mkdir documents; mkdir downloads; mkdir videos
 echo -e "\e[1;34m[%] Upgrading system..."; sleep 1
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 cd $srcdir
 echo -e "\e[1;32m[%] installing packages from given list..."; sleep 1
-sudo pacman -S --needed - < pkglist.txt; 
+sudo pacman -S --noconfirm --needed - < pkglist.txt; 
 
 echo -e "\e[1;32m[%] installing flatpaks..."; sleep 1
-flatpak install com.obsproject.Studio org.kde.kdenlive com.valvesoftware.Steam com.github.tchx84.Flatseal
+flatpak install  -y com.obsproject.Studio org.kde.kdenlive com.valvesoftware.Steam com.github.tchx84.Flatseal
 
 echo -e "\e[1;32m[%] installing aur packages..."
 sleep 1
-paru -S brave-bin pfetch spotify-tui nitch cava polymc-bin
+paru -S --noconfirm brave-bin pfetch spotify-tui nitch cava polymc-bin
 
 cd $HOME
 echo -e "\e[1;32m[%] grabbing dwm..."
