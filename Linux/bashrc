@@ -13,7 +13,6 @@ alias py='python'
 alias ping='ping -c 5'
 alias new='clear; source ~/.bashrc'
 alias fehset='feh --bg-fill'
-alias nfetch='clear; neofetch --disable gpu memory packages uptime --ascii_distro'
 alias open='pcmanfm'
 alias kpx='keepassxc-cli'
 
