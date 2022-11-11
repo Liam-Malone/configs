@@ -18,6 +18,11 @@ sudo pacman -S --noconfirm --needed - < pkglist.txt;
 echo -e "\e[1;32m[%] installing flatpaks..."; sleep 1
 flatpak install  -y com.obsproject.Studio org.kde.kdenlive com.valvesoftware.Steam com.github.tchx84.Flatseal
 
+echo -e "\e[1;32m[%] grabbing paru (aur helper)..."
+cd $HOME; git clone https://aur.archlinux.org/paru
+echo -e "\e[1;34m[%] building paru..."; cd $HOME/paru; makepkg
+sudo cp pkg/paru/usr/bin/paru /usr/bin/
+
 echo -e "\e[1;32m[%] installing aur packages..."
 sleep 1
 paru -S --noconfirm brave-bin pfetch spotify-tui nitch cava polymc-bin
@@ -36,10 +41,6 @@ echo -e "\e[1;32m[%] grabbing slstatus..."
 git clone https://github.com/Liam-Malone/slstatus
 echo -e "\e[1;34m[%] building slstatus..."; cd $HOME/slstatus; sudo make clean install; cd $HOME
 
-echo -e "\e[1;32m[%] grabbing paru (aur helper)..."
-cd $HOME; git clone https://aur.archlinux.org/paru
-echo -e "\e[1;34m[%] building paru..."; cd $HOME/paru; makepkg
-sudo cp pkg/paru/usr/bin/paru /usr/bin/
 
 cd $srcdir
 
