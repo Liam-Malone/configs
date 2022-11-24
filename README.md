@@ -1,4 +1,6 @@
 # configs
-This is where I store all my config and dot files for use across Mac and Linux.
+**This is where I keep most of my configs dotfiles**
 
-I also have a post-install setup script for arch in here too now
+*This is also home to my post-install script and files for quick initialization on new machines*
+
+That's really all there is to it, copy some if you like idgaf

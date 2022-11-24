@@ -1,0 +1,56 @@
+this is a simple guide for manual install (mostly for me to refer back to cos I'm forgetful)
+archinstall is a perfectly valid way to install arch linux and really does make things easy
+
+lsblk - check what drives are available
+
+ping to check network
+
+cfdisk -> configure partition (128M for boot with grub)
+mkfs.ext4 /dev/sda1; .... sda2
+
+mount drives:
+
+mount /dev/sda2 -> /mnt  
+mkdir /mnt/boot 
+mount /dev/sda1 -> /mnt/boot
+
+
+pacstrap /mnt base base-devel linux linux-firmware vim
+IF THIS FAILS:
+	Try running 'archinstall' to have it update keyrings then Abort and resume regular install
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt /bin/bash
+pwd; ls.....
+
+pacman -S networkmanager grub git
+systemctl enable NetworkManager
+
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+vim /etc/default/grub --> uncomment GRUB_DISABLE_OS_PROBER=false
+
+passwd - set root password
+
+vim /etc/locale.gen -- find and set lang: en_US
+locale-gen
+vim /etc/locale.conf --> lang=en_US.UTF-8
+vim /etc/hostname -- set name
+ln -sf /usr/share/zoneinfo/<region>/<city> /etc/localtime
+
+timedatectl set-ntp true
+
+exit
+umount -R /mnt
+reboot
+
+useradd -mg wheel <username>; passwd <username>
+vim /etc/sudoers --> Uncomment wheel user line; add in: Defaults !tty_tickets
+
+
+##### POST-INSTALL CONFIGURATION #####
+## From here go about configuring stuff however you want, the step below is for my config
+git clone https://github.com/Liam-Malone/configs
+cd configs
+./installs.sh

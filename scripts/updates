@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo -e "\e[1;31m[%]system update"
+sudo pacman -Syu --noconfirm
+
+echo -e "\e[1;34m[%]updating flatpaks"
+flatpak upgrade -y
+
+echo -e "\e[1;32m[%]updating rustup"
+rustup update
+
+read -p 'Would you like to rebuild aur packages? [y/N]: ' rebuildpkgs
+case $rebuildpkgs in
+	y|Y) echo -e "\e[1;35m[%]updating and rebuilding aur packages"; paru -Qqm | paru -S --rebuild -;;
+	*) echo -e "\e[1;35m[%]skipping aur pkg rebuilds"; paru -Syu --noconfirm;;
+esac

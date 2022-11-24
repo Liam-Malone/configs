@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#deepin-screenshot -s ~/pictures/screenshots/scrot.png; xclip -selection clipboard -t image/png -i ~/pictures/screenshots/scrot.png ; sleep 1 ; rm ~/pictures/screenshots/scrot.png
+flameshot gui
