@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-files=(~/.ASCII_Art/*)
 
 alias ls='ls --color=auto'
 alias ll='ls -lG'
@@ -12,9 +11,14 @@ alias chtheme='kitty +kitten themes'
 alias py='python'
 alias ping='ping -c 5'
 alias new='clear; source ~/.bashrc'
+alias nclear='clear; neofetch'
 alias fehset='feh --bg-fill'
 alias open='pcmanfm'
-alias kpx='keepassxc-cli'
+alias kpx='keepassxc-cli open'
+alias findsample='echo "find / -iname *tabliss* 2>/dev/null"'
+alias vi='vim'
+alias vim='nvim'
+alias picset='picom -b --config ~/.config/picom/picom.conf'
 
 
 if [ "$TERM" == "xterm-kitty" ] || [ "$TERM" == "alacritty" ] || [ "$TERM" == "xterm-256color" ]; then
@@ -23,8 +27,8 @@ fi
 
 ##### STARTUP HELP MESSAGE ######
 if [ "$TERM" == "alacritty" ]; then
-	$HOME/scripts/wallpaper
-	cat ~/dwm/config.h | grep XK ; echo ""
+	$HOME/scripts/wp
+	grep XK_ ~/dwm/config.h ; echo ""
 	echo -e "       above are the system keybinds - stored in \e[1;33m$HOME/dwm/config.h\e[m"
 	echo -e "       if you change these, run \e[1;33mdwmrebuild\e[m after"; echo ""
 	echo -e "       a copy of the keybinds is stored in \e[1;33m$HOME/documents/keybinds\e[m"
@@ -38,10 +42,8 @@ export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export SDL_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
-export RANGER_LOAD_DEFAULT_RC='FALSE'
 if [ xhost >& /dev/null ] ; 
 then 
-	#echo "Display exists"
 	display_exists=true
 	neofetch
 else 
