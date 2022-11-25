@@ -55,6 +55,9 @@ cp xinitrc $HOME/.xinitrc
 
 cd $HOME
 
+echo "[%] adding packer (plugin manager for neovim)"
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 echo ""; echo ""
 echo ""; echo -e "\e[1;32m[%] grabbing wallpapers..."; cd $HOME/pictures
