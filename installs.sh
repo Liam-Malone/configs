@@ -25,7 +25,7 @@ sudo cp pkg/paru/usr/bin/paru /usr/bin/
 
 echo -e "\e[1;32m[%] installing aur packages..."
 sleep 1
-paru -S --noconfirm brave-bin pfetch cava prismlauncher flameshot-git firefox-profile-switcher-connector
+paru -S --noconfirm - < aurpkglist
 
 cd $HOME
 echo -e "\e[1;32m[%] grabbing dwm..."
@@ -52,6 +52,7 @@ echo "export PATH=\"$HOME/scripts:$PATH\"" >> $HOME/.bashrc
 cp bash_profile $HOME/.bash_profile
 cp -R config $HOME/.config/
 cp xinitrc $HOME/.xinitrc
+sudo cp lightdm/* /etc/lightdm/
 
 cd $HOME
 
