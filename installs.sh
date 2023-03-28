@@ -13,7 +13,7 @@ sudo pacman -Syu --noconfirm
 
 cd $srcdir
 echo -e "\e[1;32m[%] installing packages from given list..."; sleep 1
-sudo pacman -S --noconfirm --needed - < pkglist;
+sudo pacman -S --needed - < pkglist.txt;
 
 echo -e "\e[1;32m[%] installing flatpaks..."; sleep 1
 flatpak install  -y com.obsproject.Studio org.kde.kdenlive com.valvesoftware.Steam com.github.tchx84.Flatseal
@@ -25,7 +25,7 @@ sudo cp pkg/paru/usr/bin/paru /usr/bin/
 
 echo -e "\e[1;32m[%] installing aur packages..."
 sleep 1
-paru -S --noconfirm - < aurpkglist
+paru -S --noconfirm - < aurpkglist.txt
 
 cd $HOME
 echo -e "\e[1;32m[%] grabbing dwm..."
@@ -61,8 +61,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 echo ""; echo ""
-echo ""; echo -e "\e[1;32m[%] grabbing wallpapers..."; cd $HOME/pictures
-git clone https://gitlab.com/dwt1/wallpapers; cd $HOME
+cp $srcdir/wallpapers.zip ~/pictures/
+cd ~/pictures; unzip wallpapers.zip
+~/scripts/wp
 echo -e "\e[1;32m[%] Assuming no failures; install is complete :)"
 sleep 1
 echo -e "Enjoy your new system :)"

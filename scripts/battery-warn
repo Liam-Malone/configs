@@ -1,0 +1,17 @@
+#!/bin/sh
+
+battery=$(cat /sys/class/power_supply/BAT0/capacity)
+bat_status=$(cat /sys/class/power_supply/BAT0/status)
+alerted=false
+
+while true
+do
+    if [ $battery == 10 ] && [ $bat_status == "Discharging" ]; then
+        if [ $alerted != true ]
+        then
+            notify-send -u critical -i /usr/share/icons/Adwaita/scalable/status/battery-level-10-symbolic.svg "Battery Low" "Connect to power" --hint=int:transient:1 
+            alerted=true
+        fi
+    fi
+    sleep 360
+done

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /home/liamm/slstatus
+cp config.wifi.h config.h
+sudo make clean install
+pkill slstatus && slstatus & disown
