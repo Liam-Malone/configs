@@ -1,2 +1,7 @@
+#!/bin/bash
 walls=($HOME/pictures/wallpapers/*)
-feh --bg-fill ${walls[$[ $RANDOM % ${#walls[@]} + 0 ]]}
+if [ $(pgrep swww) ]; then
+    swww img ${walls[$[ $RANDOM % ${#walls[@]} + 0 ]]} 2>/dev/null
+else
+    feh --bg-fill ${walls[$[ $RANDOM % ${#walls[@]} + 0 ]]} 2>/dev/null
+fi
