@@ -29,7 +29,7 @@ paru -S --noconfirm - < aurpkglist.txt
 
 cd $HOME
 echo -e "\e[1;32m[%] grabbing dwm..."
-git clone https://github.com/Liam-Malone/dwm
+git clone https://gitlab.com/liams-configs/dwm.git
 echo -e "\e[1;34m[%] building dwm..."; cd $HOME/dwm; sudo make clean install; cd $HOME
 echo "$(cat dwm/config.h | XK_)" > $HOME/documents/dwm-keybinds.txt
 

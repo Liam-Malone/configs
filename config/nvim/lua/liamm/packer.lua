@@ -1,20 +1,23 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use ({
-      'EdenEast/nightfox.nvim',
-      config = function()
-          vim.cmd('colorscheme carbonfox')
-      end
-      })
+
+  --themes
+  use ({'EdenEast/nightfox.nvim' })
+  use 'rebelot/kanagawa.nvim'                   --not too bad a theme
+  use({ 'rose-pine/neovim', as = 'rose-pine' }) --pretty nice themes
+  --end themes
+
+
   use 'rust-lang/rust.vim'
   use 'nvim-telescope/telescope.nvim'
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/nvim-treesitter-context'
   use 'nvim-lua/plenary.nvim'
-  use 'j-hui/fidget.nvim'
   use 'mbbill/undotree'
   use 'theprimeagen/harpoon'
+  use 'nvim-lualine/lualine.nvim'
   use 'tpope/vim-fugitive' -- git integration
   
   --LSP CONFIG

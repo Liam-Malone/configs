@@ -1,5 +1,5 @@
 function ColorMyTerminal(color)
-    color = color or "carbonfox"
+    color = color or "rose-pine-moon"
     vim.cmd.colorscheme(color)
 
     vim.cmd("hi ColorColumn ctermbg=0 guibg=purple")
