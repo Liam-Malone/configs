@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
   --end themes
 
 
+  use 'Tetralux/odin.vim' --odin lang syntax highlighting
   use 'rust-lang/rust.vim'
   use 'nvim-telescope/telescope.nvim'
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -19,8 +20,8 @@ return require('packer').startup(function(use)
   use 'theprimeagen/harpoon'
   use 'nvim-lualine/lualine.nvim'
   use 'tpope/vim-fugitive' -- git integration
-  
   --LSP CONFIG
+  --
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
@@ -37,8 +38,15 @@ return require('packer').startup(function(use)
 
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-buffer'},
+	  {'hrsh7th/cmp-path'},
+	  {'saadparwaiz1/cmp_luasnip'},
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
       {'L3MON4D3/LuaSnip'},     -- Required
+      {'rafamadriz/friendly-snippets'},
     }
   }
 

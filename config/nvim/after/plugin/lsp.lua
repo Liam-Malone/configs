@@ -10,6 +10,7 @@ lsp.ensure_installed({
     'jdtls',
     'clangd',
     'pylsp',
+    --'ols',
 })
 
 local cmp = require('cmp')
@@ -32,6 +33,7 @@ lsp.setup_nvim_cmp({
 lsp.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr, remap = false}
 
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -43,5 +45,12 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+require('lspconfig').ols.setup({
+    single_file_support = true,
+    on_attach = function (client, buffer)
+       print('reached ols')
+    end
+})
 
 lsp.setup()
