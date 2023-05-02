@@ -7,25 +7,27 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock",
-        "custom/weather",
+        //"custom/weather",
+        "custom/updates",
+        "custom/kernel-ver",
         "keyboard-state",
         "keyboard-state#Num",
+        "network",
         "idle_inhibitor",
-        "wlr/workspaces"
+        "custom/player",
+        "wlr/workspaces",
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-        "custom/updates",
-      //"custom/language",
-        "network",
-        "temperature",
+        "tray",
         "cpu",
         "memory",
         "battery",
+        "custom/bat-check",
         "backlight",
+        "custom/brightness",
         "pulseaudio",
-        "tray"
+        "clock",
     ],
 
     "hyprland/window": {
@@ -38,6 +40,13 @@
             "deactivated": ""
         },
         "timeout": 30.5
+    },
+    "custom/player":{
+        "exec": "playerctl metadata -i firefox --format '{{emoji(status)}}-{{ title }}'",
+        "interval": 10,
+        "on-click": "playerctl play-pause -i firefox",
+        "min-length": 10,
+        "max-length": 26
     },
     "wlr/workspaces": {
         "disable-scroll": true,
@@ -72,17 +81,20 @@
     "keyboard-state": {
         "capslock": true,
         "format": "A:{icon} ",
-        "format-icons": {"locked": "", "unlocked": ""},
-        "interval": 100
+        "format-icons": {"locked": "", "unlocked": ""}
     },
     "keyboard-state#Num": {
         "numlock": true,
         "format": "Num:{icon}",
-        "format-icons": {"locked": "", "unlocked": ""},
-        "interval": 100
+        "format-icons": {"locked": "", "unlocked": ""}
+    },
+    "custom/kernel-ver": {
+        "exec": "uname -r | sed 's/-a.*//p'",
+        "format": " {}",
+        "interval":"once"
     },
     "custom/updates": {
-        "exec": "(checkupdates ; paru -Qua) | wc -l",
+        "exec": "( checkupdates; paru -Qu ) | wc -l",
         "interval": 7200,
         "format": " {}"
     },
@@ -114,23 +126,44 @@
         "format": "{: %R   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
+    /*
     "backlight": {
-        "device": "intel_backlight",
+        "device": "acpi_video0",
         "format": "{icon} {percent}%",
         "format-icons": ["",""],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
     },
+    */
+    "custom/brightness": {
+        "exec": "~/.config/waybar/scripts/brightness.py",
+        "tooltip": false,
+        "format": "{icon} {}",
+        "format-icons": ["",""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6,
+        "interval": 1,
+    },
+
     "cpu": {
         "format": " {load}%",
+        "format-alt": " {usage}%",
         "min-length": 8,
         "max-length": 10
     },
     "memory": {
         "format": " {percentage}%",
         "min-length": 6,
-        "max-length": 10
+        "format-alt": " {used}/{total}GB",
+        "tooltip-format": "{used}/{total}GB",
+    },
+    "custom/bat-check": {
+        "exec": "~/.config/waybar/scripts/battery-warn.py 255",
+        "interval": 20,
+        "format": "",
+        "max-length": 0,
     },
     "battery": {
         "states": {
