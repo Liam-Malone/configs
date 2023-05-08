@@ -1,5 +1,7 @@
 {
     "layer": "top",
+    //"output": ["DP-1", "HDMI-A-1"],
+    "output": "DP-1",
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -10,28 +12,32 @@
         //"custom/weather",
         "custom/updates",
         "custom/kernel-ver",
-        "keyboard-state",
+        //"keyboard-state",
         "keyboard-state#Num",
         "network",
         "idle_inhibitor",
         "custom/player",
+        "mpris",
         "wlr/workspaces",
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "tray",
         "cpu",
+        "temperature",
         "memory",
-        "battery",
-        "custom/bat-check",
-        "backlight",
-        "custom/brightness",
+        //"battery",
+        //"custom/bat-check",
+        //"backlight",
+        //"custom/brightness",
+        "pulseaudio#microphone",
         "pulseaudio",
         "clock",
     ],
 
     "hyprland/window": {
-        "format": "{}"
+        //"separate-outputs": "true",
+        "format": "{}",
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -41,12 +47,43 @@
         },
         "timeout": 30.5
     },
+    /*
     "custom/player":{
-        "exec": "playerctl metadata -i firefox --format '{{emoji(status)}}-{{ title }}'",
+        "exec": "playerctl metadata -i firefox,brave --format '{{emoji(status)}}-{{ title }}'",
         "interval": 10,
-        "on-click": "playerctl play-pause -i firefox",
+        "on-click": "playerctl play-pause -i firefox,brave",
         "min-length": 10,
         "max-length": 26
+    },
+    */
+    "mpris":{
+        "format": "{player_icon}:  {title} {status_icon}",
+	    "format-paused": "{status_icon}: <i>{title}</i>",
+	    "player-icons": {
+	    	"default": "▶",
+	    	"mpv": "🎵",
+            "io": "🎵",
+            "spotify": "🎵",
+	    },
+	    "status-icons": {
+	    	"paused": "⏸",
+            "repeat": ""
+	    },
+        "ignored-players": ["firefox", "brave"],
+        /*
+        format options are:
+            song:
+                - artist
+                - album
+                - title
+                - length
+                - dynamic (artist, album, title, length)
+            player:
+                - player
+            state:
+                - player-icons
+                - status-icons
+        */
     },
     "wlr/workspaces": {
         "disable-scroll": true,
@@ -78,6 +115,7 @@
             "10": []
         }*/
     },
+    /*
     "keyboard-state": {
         "capslock": true,
         "format": "A:{icon} ",
@@ -88,6 +126,7 @@
         "format": "Num:{icon}",
         "format-icons": {"locked": "", "unlocked": ""}
     },
+    */
     "custom/kernel-ver": {
         "exec": "uname -r | sed 's/-a.*//p'",
         "format": " {}",
@@ -135,7 +174,6 @@
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
     },
-    */
     "custom/brightness": {
         "exec": "~/.config/waybar/scripts/brightness.py",
         "tooltip": false,
@@ -146,7 +184,7 @@
         "min-length": 6,
         "interval": 1,
     },
-
+    */
     "cpu": {
         "format": " {load}%",
         "format-alt": " {usage}%",
@@ -159,6 +197,7 @@
         "format-alt": " {used}/{total}GB",
         "tooltip-format": "{used}/{total}GB",
     },
+    /*
     "custom/bat-check": {
         "exec": "~/.config/waybar/scripts/battery-warn.py 255",
         "interval": 20,
@@ -177,6 +216,7 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
+    */
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
@@ -194,5 +234,14 @@
             "car": "",
             "default": ["", "", ""]
         }
-    }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
+    },
 }

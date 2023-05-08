@@ -12,6 +12,17 @@ window#waybar {
     color: #cdd6f4;
 }
 
+/*
+ *  ATTEMPTING TO HIDE ON NON-FOCUSED MONITOR
+ *
+#window#waybar.current-output {
+    opacity: 0.2;
+    background: transparent;
+}
+ *
+ *
+ */
+
 tooltip {
     background: #1e1e2e;
     border-radius: 10px;
@@ -53,6 +64,7 @@ tooltip {
 #custom-kernel-ver,
 #custom-brightness,
 #custom-player,
+#mpris,
 #keyboard-state,
 #keyboard-state#Num,
 #window,
@@ -63,6 +75,7 @@ tooltip {
 #memory,
 #battery,
 #pulseaudio,
+#pulseaudio.microphone,
 #network,
 #workspaces,
 #tray,
@@ -85,10 +98,17 @@ tooltip {
 
 #custom-player {
     color: #ffffff;
-    border-radius: 10px; 
+    border-radius: 10px 0 0 10px;
     margin-left: 6px;
     margin-right: 6px;
 }
+
+#mpris{
+    color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 6px;
+}
+
 #workspaces {
     background: #1e1e2e;
     border-radius: 10px;
@@ -96,6 +116,8 @@ tooltip {
     padding-right: 0px;
     padding-left: 5px;
 }
+
+
 
 #custom-updates {
     color: #f5c2e7;
@@ -142,7 +164,8 @@ tooltip {
 
 #temperature {
     color: #f8a700;
-    border-radius: 10px 0 0 10px;
+    border-left: 0;
+    border-right: 0;
 }
 
 #pulseaudio {
@@ -171,4 +194,10 @@ tooltip {
 #custom-weather {
     border-right: 0px;
     margin-left: 0px;
+}
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-radius: 0 0 0 0;
+    border-left: 0px;
+    border-right: 0px;
 }
