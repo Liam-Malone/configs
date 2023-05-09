@@ -1,7 +1,8 @@
 {
     "layer": "top",
     //"output": ["DP-1", "HDMI-A-1"],
-    "output": "DP-1",
+    //"output": "DP-1",
+    "output": "eDP-1",
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -12,7 +13,7 @@
         //"custom/weather",
         "custom/updates",
         "custom/kernel-ver",
-        //"keyboard-state",
+        "keyboard-state",
         "keyboard-state#Num",
         "network",
         "idle_inhibitor",
@@ -25,13 +26,13 @@
     "modules-right": [
         "tray",
         "cpu",
-        "temperature",
+        //"temperature",
         "memory",
-        //"battery",
-        //"custom/bat-check",
-        //"backlight",
-        //"custom/brightness",
-        "pulseaudio#microphone",
+        "battery",
+        //"custom/bat-check", -- unneeded. see battery: on-update
+        "backlight",
+        "custom/brightness",
+        //"pulseaudio#microphone",
         "pulseaudio",
         "clock",
     ],
@@ -123,6 +124,7 @@
         }*/
     },
     /*
+    */
     "keyboard-state": {
         "capslock": true,
         "format": "A:{icon} ",
@@ -133,7 +135,6 @@
         "format": "Num:{icon}",
         "format-icons": {"locked": "", "unlocked": ""}
     },
-    */
     "custom/kernel-ver": {
         "exec": "uname -r | sed 's/-a.*//p'",
         "format": " {}",
@@ -144,6 +145,7 @@
         "interval": 7200,
         "format": " {}"
     },
+    /*
    "custom/weather" : {
         "tooltip" : true,
         "format" : "{}",
@@ -151,6 +153,7 @@
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type" : "json"
     },
+    */
     "tray": {
         "icon-size": 16,
         "spacing": 10
@@ -172,7 +175,6 @@
         "format": "{: %R   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-    /*
     "backlight": {
         "device": "acpi_video0",
         "format": "{icon} {percent}%",
@@ -191,6 +193,7 @@
         "min-length": 6,
         "interval": 1,
     },
+    /*
     */
     "cpu": {
         "format": " {load}%",
@@ -211,6 +214,7 @@
         "format": "",
         "max-length": 0,
     },
+    */
     "battery": {
         "states": {
             "good": 95,
@@ -221,9 +225,9 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "on-update": "~/.config/waybar/scripts/battery-warn 255",
     },
-    */
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
@@ -242,6 +246,7 @@
             "default": ["", "", ""]
         }
     },
+    /*
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -251,4 +256,5 @@
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
     },
+    */
 }
