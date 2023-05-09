@@ -70,6 +70,7 @@ tooltip {
 #window,
 #clock,
 #idle_inhibitor,
+#disk,
 #temperature,
 #cpu,
 #memory,
@@ -107,6 +108,12 @@ tooltip {
     color: #ffffff;
     border-radius: 10px 10px 10px 10px;
     margin-left: 6px;
+}
+
+#disk{
+    color: #ffffff;
+    border-radius: 0 10px 10px 0;
+    margin-right: 6px;
 }
 
 #workspaces {
@@ -152,7 +159,6 @@ tooltip {
 
 #idle_inhibitor {
     color: #bbeeff;
-    border-radius: 0 10px 10px 0;
     border-left: 0px;
 }
 

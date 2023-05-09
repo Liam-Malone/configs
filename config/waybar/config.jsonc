@@ -16,6 +16,7 @@
         "keyboard-state#Num",
         "network",
         "idle_inhibitor",
+        "disk",
         "custom/player",
         "mpris",
         "wlr/workspaces",
@@ -46,6 +47,12 @@
             "deactivated": ""
         },
         "timeout": 30.5
+    },
+    "disk": {
+        "interval": 30,
+        "format": " {path}: {percentage_used}%",
+        "alt-format": " {path}:{used}\/{total}",
+        "tooltip-format": " {path}:{used}\/{total}",
     },
     /*
     "custom/player":{
