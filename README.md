@@ -1,6 +1,7 @@
 # configs
-**This is where I keep most of my configs dotfiles**
 
-*This is also home to my post-install script and files for quick initialization on new machines*
+This repo is:
+- where most of my dotfiles/config directories live
+- home to my post-install script and files for quick initialization on new machines
 
-That's really all there is to it, copy some if you like idgaf
+... and that's really all there is to it, copy if you like idga
