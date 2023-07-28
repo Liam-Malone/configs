@@ -11,15 +11,15 @@
     "height": 0,
     "modules-left": [
         //"custom/weather",
+        "disk",
         "custom/updates",
         "custom/kernel-ver",
         "keyboard-state",
         "keyboard-state#Num",
         "network",
         "idle_inhibitor",
-        "disk",
-        "custom/player",
-        "mpris",
+        //"custom/player",
+        //"mpris",
         "wlr/workspaces",
     ],
     "modules-center": ["hyprland/window"],
@@ -31,8 +31,8 @@
         "battery",
         //"custom/bat-check", -- unneeded. see battery: on-update
         "backlight",
-        "custom/brightness",
-        //"pulseaudio#microphone",
+        //"custom/brightness",
+        "pulseaudio#microphone",
         "pulseaudio",
         "clock",
     ],
@@ -64,6 +64,7 @@
         "max-length": 26
     },
     */
+    /*
     "mpris":{
         "format": "{player_icon}:  {title} {status_icon}",
 	    "format-paused": "{status_icon}: <i>{title}</i>",
@@ -78,7 +79,6 @@
             "repeat": ""
 	    },
         "ignored-players": ["firefox", "brave"],
-        /*
         format options are:
             song:
                 - artist
@@ -91,8 +91,8 @@
             state:
                 - player-icons
                 - status-icons
-        */
     },
+    */
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -141,9 +141,10 @@
         "interval":"once"
     },
     "custom/updates": {
-        "exec": "( checkupdates; paru -Qu ) | wc -l",
+        "exec": "( checkupdates; paru -Qua ) | wc -l",
         "interval": 7200,
-        "format": " {}"
+        "format": " {}",
+        "on-click": "( checkupdates; paru -Qua ) | wc -l",
     },
     /*
    "custom/weather" : {
@@ -183,6 +184,7 @@
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
     },
+    /*
     "custom/brightness": {
         "exec": "~/.config/waybar/scripts/brightness.py",
         "tooltip": false,
@@ -193,7 +195,6 @@
         "min-length": 6,
         "interval": 1,
     },
-    /*
     */
     "cpu": {
         "format": " {load}%",
@@ -226,7 +227,7 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
-        "on-update": "~/.config/waybar/scripts/battery-warn 255",
+        "on-update": "/home/liamm/.config/waybar/scripts/battery-warn.py 255",
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -246,7 +247,6 @@
             "default": ["", "", ""]
         }
     },
-    /*
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -255,6 +255,5 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
-    },
-    */
+    }
 }

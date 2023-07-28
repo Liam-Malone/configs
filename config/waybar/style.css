@@ -112,8 +112,8 @@ tooltip {
 
 #disk{
     color: #ffffff;
-    border-radius: 0 10px 10px 0;
-    margin-right: 6px;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 6px;
 }
 
 #workspaces {
@@ -159,7 +159,7 @@ tooltip {
 
 #idle_inhibitor {
     color: #bbeeff;
-    border-left: 0px;
+    border-radius: 0 10px 10px 0;
 }
 
 #network {

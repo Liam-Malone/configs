@@ -15,7 +15,7 @@ def alert(id):
     status = str(output.split('\n')[0]).lower().strip()
 
     if battery <= 10 and status == discharging:
-        os.system(f'dunstify -u critical "Low Battery" "Connect Power Adapter" -i /usr/share/icons/Adwaita/scalable/status/battery-level-10-symbolic.svg -r {id} -t 20000')
+        os.system(f'dunstify -u critical "Low Battery" "Connect Power Adapter" -i /usr/share/icons/Adwaita/symbolic/status/battery-caution-symbolic.svg -r {id} -t 60000')
     else:
         stream = os.popen(f'dunstctl history | grep {id}')
         output = stream.read()
