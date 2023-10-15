@@ -9,7 +9,7 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-  - ~/.config/alacritty/.alacritty-colorscheme/themes/hyper.yaml #hyper is best so far
+  - ~/.config/alacritty/.alacritty-colorscheme/themes/campbell.yaml #hyper and campbell are my favorites
 #  - /path/to/alacritty.yml
 
 # Any items in the `env` entry below will be added as
