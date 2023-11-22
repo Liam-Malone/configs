@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 clear;echo ""; 
 echo -e "\e[1;35mIf you haven't already, cd to the directory this script is stored in before continuing."; sleep 3; echo "";
 echo "This script will ensure the core, extra and multilib repos are enabled in your /etc/pacman.conf"; sleep 3; echo ""
@@ -7,7 +7,7 @@ echo -e "\e[1;34mrunning from $srcdir"
 echo -e "\e[1;34menabling appropriate repos"
 sudo cp $srcdir/pacman.conf /etc/pacman.conf
 cd $HOME
-mkdir -p pictures/screenshots pictures/wallpapers documents downloads videos
+mkdir -p pictures/screenshots documents downloads videos
 echo -e "\e[1;34m[%] Upgrading system..."; sleep 1
 sudo pacman -Syu --noconfirm
 
@@ -27,33 +27,27 @@ echo -e "\e[1;32m[%] installing aur packages..."
 sleep 1
 paru -S --noconfirm - < aurpkglist.txt
 
-cd $HOME
-echo -e "\e[1;32m[%] grabbing dwm..."
-git clone https://gitlab.com/liams-configs/dwm.git
-echo -e "\e[1;34m[%] building dwm..."; cd $HOME/dwm; sudo make clean install; cd $HOME
-echo "$(cat dwm/config.h | XK_)" > $HOME/documents/dwm-keybinds.txt
-
-echo -e "\e[1;32m[%] grabbing dmenu..."
-git clone https://github.com/Liam-Malone/dmenu
-echo -e "\e[1;34m[%] building dmenu..."; cd $HOME/dmenu; sudo make clean install; cd $HOME
-
-echo -e "\e[1;32m[%] grabbing slstatus..."
-git clone https://github.com/Liam-Malone/slstatus
-echo -e "\e[1;34m[%] building slstatus..."; cd $HOME/slstatus; sudo make clean install; cd $HOME
-
-
 cd $srcdir
 
 echo -e "\e[1;34m[%] moving onto configs..."; sleep 1
-cp bashrc $HOME/.bashrc
+
+cd $HOME
+git clone https://github.com/Liam-Malone/.dotfiles.git
+cd .dotfiles
+
+cp .bash* $HOME/
+cp .config $HOME/
+
+cd $srcdir
 cp -R scripts $HOME/
 
-echo "export PATH=\"$HOME/scripts:$PATH\"" >> $HOME/.bashrc
-cp bash_profile $HOME/.bash_profile
-cp -R config $HOME/.config/
 cp xinitrc $HOME/.xinitrc
-chmod +x $HOME/.xinitrc
-sudo cp -r lightdm /etc/
+sudo cp -r sddm.conf.d /etc/
+
+echo "[%] enabling sddm"
+systemctl enable sddm
+# TODO:
+#   add service enables
 
 cd $HOME
 
@@ -65,9 +59,8 @@ echo ""; echo ""
 cp $srcdir/wallpapers.zip ~/pictures/
 cd ~/pictures; unzip wallpapers.zip
 
-systemctl enable sddm
 echo -e "\e[1;32m[%] Assuming no failures; install is complete :)"
 sleep 1
 echo -e "Enjoy your new system :)"
 sleep 1
-Hyprland
+systemctl start sddm
